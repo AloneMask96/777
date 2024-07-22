@@ -7,6 +7,11 @@ int main()
   clock_t t;
   printf("enter the number of elements :");
   scanf("%d",&n);
+  for(i=0;i<n;i++)
+  {
+   a[i]=rand()%1000;
+   printf("%d",a[i]);
+  }
   t = clock();
   for(i=0;i<n-2;i++)
  {
