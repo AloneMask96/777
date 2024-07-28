@@ -8,7 +8,7 @@ void warshal(int adj[10][10], int n)
    for(j=1;j<=n;j++)
     adj[i][j]= adj[i][j] || adj[i][k] && adj[k][j] ;
 }
-void main()
+int main()
 {
  int n,i,j,adj[10][10];
  printf("enter the new vertices");
