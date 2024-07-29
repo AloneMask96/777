@@ -13,7 +13,7 @@ void dijikstras(int cost[][100],int dist[],int n,int v)
 	count=2;
 	while(count<n)
 	{
-		if (dist[i] < min && flag[i] == 0)
+		for (i=1; min=999; i<=n ; i++)
 		{
 			if ((dist[i]<min)&&(flag[i]==0))
 				{
