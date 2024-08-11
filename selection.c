@@ -13,7 +13,7 @@ int main()
    printf("\n%d",a[i]);
   }
   t = clock();
-  for(i=0;i<n-2;i++)
+  for(i=0;i<=n-2;i++)
  {
  min = i;
  for(j=i+1;j<=n-1;j++)
