@@ -40,33 +40,38 @@ int main()
     int n, a[100000], choice;
     clock_t t;
 
+
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    printf("1. Read from file\n2. Random numbers\n");
+
+    printf("1. Read from file\n2. Generate random numbers\nChoose an option: ");
     scanf("%d", &choice);
 
     if (choice == 1)
     {
+
         FILE* file = fopen("data.txt", "r");
-        if (file == NULL) 
+        if (!file) 
         {
-            printf("Error opening file.\n");
+            printf("Error: Could not open file.\n");
             return 1;
         }
-        for (int i = 0; i < n && fscanf(file, "%d", &a[i]) == 1; i++)
-            printf("%d\n", a[i]);
+        for (int i = 0; i < n; i++)
+            fscanf(file, "%d", &a[i]);
         fclose(file);
     }
     else
     {
-        printf("Random numbers:\n");
+
+        printf("Generating random numbers:\n");
         for (int i = 0; i < n; i++)
         {
             a[i] = rand() % 1000;
             printf("%d\n", a[i]);
         }
     }
+
 
     t = clock();
     quicksort(a, 0, n - 1);
@@ -76,6 +81,7 @@ int main()
     for (int i = 0; i < n; i++)
         printf("%d\n", a[i]);
 
-    printf("Sort function took %f seconds to execute.\n", ((double)t) / CLOCKS_PER_SEC);
+    printf("Quicksort took %f seconds.\n", ((double)t) / CLOCKS_PER_SEC);
     return 0;
 }
+
